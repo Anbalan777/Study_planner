@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Study Planner</h1>
+        <p>Enter your subjects, deadlines, and free time to generate a study plan.</p>
+        <form id="studyForm">
+            <div class="form-group">
+                <label for="subjects">Subjects (comma-separated):</label>
+                <input type="text" id="subjects" name="subjects" placeholder="e.g., Math, Science, History" required>
+            </div>
+            <div class="form-group">
+                <label for="deadlines">Deadlines (comma-separated, YYYY-MM-DD):</label>
+                <input type="text" id="deadlines" name="deadlines" placeholder="e.g., 2023-12-15, 2023-12-20, 2023-12-25" required>
+            </div>
+            <div class="form-group">
+                <label for="freeTime">Free Time (hours per day):</label>
+                <input type="number" id="freeTime" name="freeTime" placeholder="e.g., 4" required>
+            </div>
+            <button type="submit">Generate Study Plan</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
